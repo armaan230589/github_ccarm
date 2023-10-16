@@ -1,0 +1,28 @@
+name: Create NAR ID Directory
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create-directory:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Create NAR ID Directory
+        run: |
+          mkdir -p "NAR ID"
+          echo "Directory structure created." > "NAR ID/README.md"
+        working-directory: ${{ github.workspace }}
+
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add "NAR ID"
+          git commit -m "Create NAR ID directory"
+          git push
+        working-directory: ${{ github.workspace }}
