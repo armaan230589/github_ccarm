@@ -20,7 +20,7 @@ jobs:
 
       - name: Commit and Push Changes
         run: |
-          git config --local user.email "arms.sha786@gmail.com"
+          git config --local user.email "shariffarmaan65@gmail.com"
           git config --local user.name "armaan230589"
           git add "NAR ID"
           git commit -m "Create NAR ID directory"
